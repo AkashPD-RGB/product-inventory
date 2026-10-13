@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stationery Inventory Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>📚 Stationery Inventory Manager</h1>
+      <p class="subtitle">Manage your stationery stock — add, filter, and discount items.</p>
+
+      <form id="product-form">
+        <div class="grid">
+          <label>
+            Product name
+            <input id="name" type="text" placeholder="e.g. A4 Notebook" required />
+          </label>
+          <label>
+            Price (₹)
+            <input id="price" type="number" min="0" step="0.01" placeholder="120" required />
+          </label>
+          <label>
+            Tags (comma separated)
+            <input id="tags" type="text" placeholder="paper, school" />
+          </label>
+          <label class="checkbox">
+            <input id="in-stock" type="checkbox" checked />
+            In stock
+          </label>
+        </div>
+        <button type="submit">➕ Add Product</button>
+      </form>
+
+      <div class="actions">
+        <input id="search" type="text" placeholder="🔍 Search by name..." />
+        <button id="filter-btn" type="button">Show In Stock Only</button>
+        <button id="discount-btn" type="button">Apply 10% Discount</button>
+        <button id="reset-btn" type="button">Reset</button>
+      </div>
+
+      <p id="message" class="message"></p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th><th>Name</th><th>Price</th><th>In Stock</th><th>Tags</th>
+          </tr>
+        </thead>
+        <tbody id="product-table-body"></tbody>
+      </table>
+    </main>
+    <script src="dist/app.js"></script>
+  </body>
+</html>
